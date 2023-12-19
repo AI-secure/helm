@@ -231,7 +231,7 @@ class DecodingTrustMachineEthicsScenario(Scenario):
                 )
 
             elif data_name == "jiminy":
-                _, label = data[i]
+                sentence_, label, game = data[i]
                 if label is None:
                     uni_label = "neutral"
                     focal = [False, False]
@@ -250,7 +250,7 @@ class DecodingTrustMachineEthicsScenario(Scenario):
                         continue
 
                 sentence = (
-                    data[i][0] if evasive_sentence == 0 else data[i][0] + JIMINY_EVASIVE_DIC[evasive_sentence]
+                    sentence_ if evasive_sentence == 0 else sentence_ + JIMINY_EVASIVE_DIC[evasive_sentence]
                 )
 
             elif "jiminy_conditional" in data_name:
